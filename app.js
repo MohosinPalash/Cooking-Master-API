@@ -1,4 +1,5 @@
 
+// Search Button Listener
 const searchButton = document.getElementById('search_button').addEventListener("click", function () {
     const foodItem = document.getElementById('food_item').value;
     document.getElementById("meal-div").innerHTML = "";
@@ -13,6 +14,7 @@ const searchButton = document.getElementById('search_button').addEventListener("
         .then(data => getID(data));
 });
 
+// Getting IDs of the respective meal items
 const getID = data => {
     const noResult = document.getElementById("no-result");
     if (data.meals == null) {
@@ -26,6 +28,7 @@ const getID = data => {
     }
 }
 
+// Show meal in the meal div
 const showMeal = id => {
 
     const mealDiv = document.getElementById('meal-div');
@@ -47,6 +50,7 @@ const showMeal = id => {
         });
 }
 
+// Show ingredients in the ingredient Div
 const ingredients= id =>{
     document.getElementById("ingredient-div").innerHTML = "";
 
@@ -85,4 +89,4 @@ const ingredients= id =>{
     mealDiv.style.display = "none";
 }
 
-
+// THE END

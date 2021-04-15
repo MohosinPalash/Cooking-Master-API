@@ -37,7 +37,7 @@ nav .nav-item > a {
 }
 
 
-/* Meal div */
+/* Meal div CSS*/
 #meal-div{
 	
 	display: grid;
@@ -61,7 +61,7 @@ nav .nav-item > a {
 	height: 100%;
 }
 
-/* ingredient div */
+/* ingredient div CSS*/
 #ingredient-div{
 	display: none;
 	grid-template-columns: repeat(1, 1fr);
