@@ -70,11 +70,14 @@ const ingredients= id =>{
                     <li>${data.meals[0].strIngredient3}</li>
                     <li>${data.meals[0].strIngredient4}</li>
                     <li>${data.meals[0].strIngredient5}</li>
+                    <li>${data.meals[0].strIngredient6}</li>
+                    <li>${data.meals[0].strIngredient7}</li>
                 </ul>
             </div>
             `
             div1.innerHTML = ingredientInfo;
             ingredientDiv.appendChild(div1);
+            
         });
 
     ingredientDiv.style.display = "grid";

@@ -8,14 +8,14 @@ nav {
 	top: 0;
 	height: 70px;
 	padding: 0 1.5em;
-	background-color: orange;
+	background-color: orangered;
 	font-family: 'Montserrat', sans-serif;
     font-size: 18px;
 }
 nav .logo {
 	font-size: 1.25em;
 	line-height: 70px;
-	color: black;
+	color: white;
 }
 nav .nav-menu {
 	position: absolute;
@@ -32,13 +32,14 @@ nav .nav-item > a {
 	display: inline-block;
 	padding: 0 1.5em;
 	line-height: 70px;
-	color:black;
+	color:white;
 	text-decoration: none;
 }
 
 
 /* Meal div */
 #meal-div{
+	
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 20px;
@@ -47,8 +48,8 @@ nav .nav-item > a {
 	font-family: Cambria;
     text-align: center;
     border-radius: 10px;
-    background-color: rgb(233, 232, 232);
-    color: black;
+    background-color: orangered;
+    color: white;
 	font-size: 25px;
 }
 .each-meal p{
@@ -70,8 +71,8 @@ nav .nav-item > a {
 .ingredient-meal{
 	font-family: Cambria;
     border-radius: 10px;
-    background-color: rgb(233, 232, 232);
-    color: black;
+    background-color: orangered;
+    color: white;
 	font-size: 25px;
 	margin: 1% 25%;
 }
