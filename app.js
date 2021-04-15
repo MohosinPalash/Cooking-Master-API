@@ -2,6 +2,10 @@
 const searchButton = document.getElementById('search_button').addEventListener("click", function () {
     const foodItem = document.getElementById('food_item').value;
     document.getElementById("meal-div").innerHTML = "";
+    const ingredientDiv = document.getElementById('ingredient-div');
+    ingredientDiv.style.display = "none";
+    const mealDiv = document.getElementById('meal-div');
+    mealDiv.style.display = "grid";
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${foodItem}`
     const url1 = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${foodItem}`
     fetch(url)
@@ -25,9 +29,9 @@ const getID = data => {
 const showMeal = id => {
 
     const mealDiv = document.getElementById('meal-div');
-    const ingredientDiv = document.getElementById('ingredient-div');
     const div = document.createElement('div');
     let mealInfo = "";
+
     const url1 = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
     fetch(url1)
         .then(res => res.json())
@@ -43,9 +47,39 @@ const showMeal = id => {
         });
 }
 
-const ingredients = id =>{
-    const noResult = document.getElementById("no-result");
-    noResult.style.display = "block";
+const ingredients= id =>{
+    document.getElementById("ingredient-div").innerHTML = "";
+
+    const ingredientDiv = document.getElementById('ingredient-div');
+    const div1 = document.createElement('div');
+    let ingredientInfo ="";
+
+    const url2 = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
+    fetch(url2)
+        .then(res => res.json())
+        .then(data => {
+            
+            ingredientInfo += `
+            <div class="ingredient-meal">
+                <img src="${data.meals[0].strMealThumb}">
+                <h1 style="text-align: center">${data.meals[0].strMeal}</h1>
+                <p style="margin-left: 10px"><strong>Ingredients:</strong></p>
+                <ul>
+                    <li>${data.meals[0].strIngredient1}</li>
+                    <li>${data.meals[0].strIngredient2}</li>
+                    <li>${data.meals[0].strIngredient3}</li>
+                    <li>${data.meals[0].strIngredient4}</li>
+                    <li>${data.meals[0].strIngredient5}</li>
+                </ul>
+            </div>
+            `
+            div1.innerHTML = ingredientInfo;
+            ingredientDiv.appendChild(div1);
+        });
+
+    ingredientDiv.style.display = "grid";
+    const mealDiv = document.getElementById('meal-div');
+    mealDiv.style.display = "none";
 }
 
 
